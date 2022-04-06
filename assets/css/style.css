@@ -72,6 +72,7 @@ html {
     left: 0;
     right: 0;
     z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
 }
 
 #nav {
@@ -99,7 +100,7 @@ html {
     line-height: 46.5px;
     color: #fff;
     padding: 0 24px;
-    display: inline-block;
+    display: block;
     text-transform: uppercase;
 }
 
@@ -125,28 +126,53 @@ html {
 #nav .nav-arrow-down {
     font-size: 14px;
 }
+
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .mobile-menu-btn,
 #header .search-button {
     float: right;
     padding: 0 22px;
 }
+
+/* #header .search-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 22px;
+} */
 
 #header .search-button:hover {
     cursor: pointer;
     background-color: #f44336 !important;
 }
 
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn .menu-icon,
 #header .search-icon {
     color: #fff;
     line-height: 46.5px;
     font-size: 18px;
 }
 
+#header .mobile-menu-btn:hover .menu-icon {
+    color: #000;
+}
+
+
 #slider {
     margin-top: 46.5px;
     padding-top: 50%;
-    background: top center / cover url(/assets/img/slider/chicago.jpg) no-repeat;
+    background: top center / cover url(../img/slider/chicago.jpg) no-repeat;
     position: relative;
-    
 }
 
 #slider .text-content {
@@ -168,6 +194,7 @@ html {
     margin-bottom: 15px;
     font-size: 15px;
     font-weight: bolder;
+    text-shadow: 0 0 2px #000;
 }
 
 #content {
@@ -176,9 +203,12 @@ html {
 
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 64px 0 112px;
     line-height: 1.5;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading {
@@ -186,6 +216,7 @@ html {
     letter-spacing: 4px;
     text-align: center;
     font-weight: 500;
+    margin: 10px 0;
 }
 
 #content .section-sub-heading {
@@ -203,7 +234,7 @@ html {
 }
 
 #content .members-list {
-    padding-top: 32px;
+    margin-top: 32px;
 }
 
 #content .member-name {
@@ -256,7 +287,7 @@ html {
     
 .tour-section .places-list {
     font-size: 15px;
-    margin-top: 32px;
+    margin-top: 16px;
 }
 
 .places-list .place-img {
@@ -275,6 +306,7 @@ html {
 
 .places-list .place-heading {
     margin-bottom: 15px;
+    font-size: 15px;
 }
 
 .places-list .place-time {
@@ -288,12 +320,15 @@ html {
 
 .btn {
     /* line-height: 24px; */
-    padding: 8px 16px;
+    padding: 10px 16px;
     display: inline-block;
     text-decoration: none;
     color: #fff;
     background-color: #000;
     border: none;
+    font-size: 15px;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .btn:hover {
@@ -315,6 +350,15 @@ html {
 .contact-info i[class*="ti-"] {
     display: inline-block;
     width: 30px;
+}
+
+.contact-info a {
+    color: #0000EE;
+    opacity: 0.8;
+}
+
+.contact-info a:hover {
+    opacity: 1;
 }
 
 .contact-form {

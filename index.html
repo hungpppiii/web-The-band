@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link
       rel="stylesheet"
       href="./assets/fonts/themify-icons/themify-icons.css"
@@ -34,11 +35,16 @@
           </li>
         </ul>
         <!-- end nav -->
+        <!-- mobile menu button -->
+        <div id="mobile-menu" class="mobile-menu-btn">
+        <i class="menu-icon ti-menu"></i>
+        </div>
+        <!-- end mobile menu button -->
         <!-- begin serch button -->
         <div class="search-button">
           <i class="search-icon ti-search"></i>
         </div>
-        <!-- begin serch button -->
+        <!-- end search button -->
       </div>
       <div id="slider">
         <!-- Slider -->
@@ -69,7 +75,7 @@
               ea commodo consequat.
             </p>
             <div class="row members-list">
-              <div class="col col-third text-center">
+              <div class="col col-third s-col-full mt-16 text-center">
                 <p class="member-name">Name</p>
                 <img
                   src="./assets/img/band/bandmember.jpg"
@@ -77,7 +83,7 @@
                   class="img-member"
                 />
               </div>
-              <div class="col col-third text-center">
+              <div class="col col-third s-col-full mt-16 text-center">
                 <p class="member-name">Name</p>
                 <img
                   src="./assets/img/band/bandmember.jpg"
@@ -85,7 +91,7 @@
                   class="img-member"
                 />
               </div>
-              <div class="col col-third text-center">
+              <div class="col col-third s-col-full mt-16 text-center">
                 <p class="member-name">Name</p>
                 <img
                   src="./assets/img/band/bandmember.jpg"
@@ -117,31 +123,31 @@
               </li>
             </ul>
             <div class="row places-list">
-              <div class="col col-third place-item">
+              <div class="col col-third s-col-full mt-16">
                 <img src="./assets/img/places/place_1.jpg" alt="New York" class="place-img">
                 <div class="place-body">
                   <h2 class="place-heading">New York</h2>
                   <div class="place-time">Fri 27 Nov 2016</div>
                   <div class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
-                  <button class="btn js-buy-ticket">Buy Tickets</button>
+                  <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
                 </div>
               </div>
-              <div class="col col-third place-item">
+              <div class="col col-third s-col-full mt-16">
                 <img src="./assets/img/places/place_2.jpg" alt="Paris" class="place-img">
                 <div class="place-body">
                   <h2 class="place-heading">Paris</h2>
                   <div class="place-time">Sat 28 Nov 2016</div>
                   <div class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
-                  <button class="btn js-buy-ticket">Buy Tickets</button>
+                  <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
                 </div>
               </div>
-              <div class="col col-third place-item">
+              <div class="col col-third s-col-full mt-16">
                 <img src="./assets/img/places/place_3.jpg" alt="San Francisco" class="place-img">
                 <div class="place-body">
                   <h2 class="place-heading">San Francisco</h2>
                   <div class="place-time">Sun 29 Nov 2016</div>
                   <div class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</div>
-                  <button class="btn js-buy-ticket">Buy Tickets</button>
+                  <button class="btn s-full-width js-buy-ticket">Buy Tickets</button>
                 </div>
               </div>
             </div>
@@ -154,19 +160,19 @@
             <div class="section-sub-heading">Fan? Drop a note!</div>
             <div class="row contact-content">
               <p>
-                <div class="col col-half contact-info">
+                <div class="col col-half s-col-full contact-info">
                   <p><i class="ti-location-pin"></i>Chicago, US</p>  
-                  <p><i class="ti-mobile"></i>Phone: +00 151515</p>  
-                  <p><i class="ti-email"></i>Email: mail@mail.com</p>  
+                  <p><i class="ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>  
+                  <p><i class="ti-email"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>  
                 </div>
               </p>
-              <div class="col col-half contact-form">
+              <div class="col col-half s-col-full s-mt-32 contact-form">
                 <form action="">
                   <div class="row">
-                    <div class="col col-half">
+                    <div class="col col-half s-col-full">
                       <input type="text" placeholder="Name"  name="" id="" class="form-control">
                     </div>
-                    <div class="col col-half">
+                    <div class="col col-half s-col-full s-mt-8">
                       <input type="email" placeholder="Email" name="" id="" class="form-control">
                     </div>
                   </div>
@@ -177,7 +183,7 @@
                   </div>
                   <div class="row">
                     <div class="col col-full">
-                      <input class="btn pull-right mt-16" type="submit" value="SEND">
+                      <input class="contact-submit-btn btn pull-right s-full-width mt-16" type="submit" value="SEND">
                     </div>
                   </div>
                 </form>
@@ -236,6 +242,38 @@
         </footer>
       </div>
     </div>
+
+    <script>
+      var header = document.getElementById('header');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var headerHeight = header.clientHeight;
+      // đóng mở mobile menu
+      mobileMenu.onclick = function() {
+        var isClosed = header.clientHeight === headerHeight;
+        if (isClosed) {
+          header.style.height = 'auto';
+        } else {
+          header.style.height = null;
+        }
+      }
+
+      // đóng menu khi chọn menu
+      var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+      
+      for (var i = 0; i < menuItems.length; i++) {
+        var menuItem = menuItems[i];
+        // console.log(isParentMenu);
+        
+        menuItem.onclick = function() {
+          var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains("subnav");
+          if (isParentMenu) {
+            event.preventDefault();
+          } else {
+            header.style.height = null;
+          }
+        }
+      }
+     </script>
   </body>
   <script>
     const buyBtns = document.querySelectorAll('.js-buy-ticket');
